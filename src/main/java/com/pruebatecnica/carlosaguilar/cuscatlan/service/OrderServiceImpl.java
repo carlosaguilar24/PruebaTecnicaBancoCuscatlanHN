@@ -44,9 +44,6 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public List<Order> getOrderByClient(Long id){
-       if(orders == null){
-           return Collections.emptyList();
-       }
         return orders.stream().filter(order -> order.getClientId().equals(id)).collect(Collectors.toList());
     }
 
