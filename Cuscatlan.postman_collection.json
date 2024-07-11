@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "acec7116-0ced-4c39-bee8-0e23b76b69d2",
+		"name": "Cuscatlan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15753296"
+	},
+	"item": [
+		{
+			"name": "GetProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Simulator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n  \"orderId\": \"1\",\r\n  \"customerName\": \"Carlos Armando Aguilar\",\r\n  \"cardNumber\": \"1234567890123456\",\r\n  \"cardHolderName\": \"Carlos Aguilar\",\r\n  \"expirationDate\": \"12/25\",\r\n  \"cvv\": 123,\r\n  \"billingAddress\": \"Tegucigalpa\",\r\n  \"email\": \"carlosaguilardiaz24@gmail.com\",\r\n  \"phoneNumber\": \"+50433494741\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"clienteId\": 4,\r\n  \"productos\": [\r\n    {\r\n      \"id\": 1,\r\n      \"title\": \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\r\n      \"price\": 109.95,\r\n      \"description\": \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",\r\n      \"category\": \"men's clothing\",\r\n      \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\r\n      \"rating\": {\r\n        \"rate\": 3.9,\r\n        \"count\": 120\r\n      }\r\n    },\r\n     {\r\n      \"id\": 13,\r\n      \"title\": \"Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin\",\r\n      \"price\": 599.0,\r\n      \"description\": \"21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz\",\r\n      \"category\": \"electronics\",\r\n      \"image\": \"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg\",\r\n      \"rating\": {\r\n        \"rate\": 2.9,\r\n        \"count\": 250\r\n      }\r\n    }\r\n  ],\r\n  \"total\": 0,\r\n  \"estado\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/orders/createOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"orders",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/orders/getOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"orders",
+						"getOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/orders/getOrderById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"orders",
+						"getOrderById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrdersByClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/orders/getOrderByClient/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"orders",
+						"getOrderByClient",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrder",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idOrder\": 1,\r\n  \"status\": \"Completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cuscatlan/orders/updpateOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuscatlan",
+						"orders",
+						"updpateOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
