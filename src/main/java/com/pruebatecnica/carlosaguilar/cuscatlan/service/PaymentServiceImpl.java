@@ -4,6 +4,7 @@ import com.pruebatecnica.carlosaguilar.cuscatlan.Dto.Order;
 import com.pruebatecnica.carlosaguilar.cuscatlan.Dto.PaymentRequest;
 import com.pruebatecnica.carlosaguilar.cuscatlan.Dto.PaymentResponse;
 import com.pruebatecnica.carlosaguilar.cuscatlan.Dto.UpdateProduct;
+import com.pruebatecnica.carlosaguilar.cuscatlan.Exceptions.PaymentException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,11 @@ public class PaymentServiceImpl implements PaymentService{
             if (order == null) {
                 throw new PaymentException("Order not found for ID: " + paymentRequest.getOrderId());
             }
+
+            if ("Completed".equals(order.getStatus())) {
+                throw new PaymentException("Order with ID: " + paymentRequest.getOrderId() + " has already been completed.");
+            }
+
             paymentResponse.setAmount(order.getTotal());
             UpdateProduct updateProduct = new UpdateProduct();
             updateProduct.setIdOrder(paymentRequest.getOrderId());
@@ -75,10 +81,13 @@ public class PaymentServiceImpl implements PaymentService{
         Matcher matcher = pattern.matcher(expirationDate);
         return matcher.matches();
     }
-
+/*
     static class PaymentException extends Exception {
         public PaymentException(String message) {
             super(message);
         }
 }
+
+ */
+
 }

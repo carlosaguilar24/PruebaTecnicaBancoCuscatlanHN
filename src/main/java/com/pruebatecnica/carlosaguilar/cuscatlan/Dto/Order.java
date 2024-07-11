@@ -7,8 +7,8 @@ import java.util.List;
 @Data
 public class Order {
     private Long id;
-    private Long clienteId;
-    private List<Product> productos;
+    private Long clientId;
+    private List<Product> products;
     private Double total;
-    private String estado;
+    private String status;
 }

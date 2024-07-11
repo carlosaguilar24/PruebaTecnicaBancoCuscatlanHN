@@ -2,6 +2,7 @@ package com.pruebatecnica.carlosaguilar.cuscatlan.controller;
 
 import com.pruebatecnica.carlosaguilar.cuscatlan.Dto.Order;
 import com.pruebatecnica.carlosaguilar.cuscatlan.Dto.UpdateProduct;
+import com.pruebatecnica.carlosaguilar.cuscatlan.Exceptions.PaymentException;
 import com.pruebatecnica.carlosaguilar.cuscatlan.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,8 +40,12 @@ public class OrderController {
     }
 
     @PatchMapping("/updpateOrder")
-    public Optional<Order> updateStatusOrder(@RequestBody UpdateProduct updateProduct) {
-        return this.orderService.updateStatusOrder(updateProduct);
+    public boolean updateStatusOrder(@RequestBody UpdateProduct updateProduct) {
+        try {
+            return this.orderService.updateStatusOrder(updateProduct);
+        } catch (PaymentException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
