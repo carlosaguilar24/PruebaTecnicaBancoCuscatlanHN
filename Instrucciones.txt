@@ -1,0 +1,12 @@
+* El IDE utilizado: Intellij Idea
+* Primero se deben crear las ordenes para poder consultarlas y procesar el pago
+* La tarjeta debe tener siempre 16 caracteres
+* El formato de fecha de vencimiento de la tarjeta es MM/AA
+* El endpoint "UpdateOrder" se creo para poder actualizar la orden,
+este solo se creo asumiendo en un ejemplo funcional en productivo que la orden por x o y motivo no se actualice a completado,
+el proceso de pago realiza la actualización  estas ordenes, se pueden volver a consultar las ordenes.
+* Se crearon endpoints para obtener ordenes, ordenes por cliente y ordenes por id de orden.
+
+*Cualquier duda estoy a la orden*
+
+- Carlos Aguilar

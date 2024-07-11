@@ -44,8 +44,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public List<Order> getOrderByClient(Long id){
+
         return orders.stream().filter(order -> order.getClientId().equals(id)).collect(Collectors.toList());
     }
+
 
     public boolean updateStatusOrder(UpdateProduct updateProduct) {
         Optional<Order> optionalOrder = getOrderById(updateProduct.getIdOrder());
