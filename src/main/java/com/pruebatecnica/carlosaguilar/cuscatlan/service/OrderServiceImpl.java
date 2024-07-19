@@ -59,10 +59,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private void calculateTotal(Order order) {
-        double total = order.getProducts().stream()
-                .mapToDouble(Product::getPrice)
-                .sum();
-        order.setTotal(total);
+        double totalItem = 0;
+        double total = order.getTotal();
+        for(Product product : order.getProducts()){
+            totalItem = product.price * product.getQuantity();
+            total = total + totalItem;
+        }
     }
-
     }

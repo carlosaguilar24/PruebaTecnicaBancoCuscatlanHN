@@ -11,4 +11,5 @@ public class Product {
     public String category;
     public String image;
     public Rating rating;
+    public double quantity;
 }

@@ -51,10 +51,10 @@ public class PaymentServiceImpl implements PaymentService{
             return paymentResponse;
     }
 
-
     private Order findOrderById(Long id) {
         return orderService.getOrderById(id).orElse(null);
     }
+
     private void validatePaymentRequest(PaymentRequest paymentRequest) throws PaymentException {
         if (!isCardNumberValid(paymentRequest.getCardNumber())) {
             throw new PaymentException("Invalid Card Number");
@@ -68,6 +68,7 @@ public class PaymentServiceImpl implements PaymentService{
         if (cardNumber == null || cardNumber.length() != 16) {
             return false;
         }
+
         for (char c : cardNumber.toCharArray()) {
             if (!Character.isDigit(c)) {
                 return false;

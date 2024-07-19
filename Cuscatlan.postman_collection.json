@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\t{\r\n  \"orderId\": \"2\",\r\n  \"customerName\": \"Carlos Armando Aguilar\",\r\n  \"cardNumber\": \"1234567890123454\",\r\n  \"cardHolderName\": \"Carlos Aguilar\",\r\n  \"expirationDate\": \"12/25\",\r\n  \"cvv\": 123,\r\n  \"billingAddress\": \"Tegucigalpa\",\r\n  \"email\": \"carlosaguilardiaz24@gmail.com\",\r\n  \"phoneNumber\": \"+50433494741\"\r\n  }",
+					"raw": "\t{\r\n  \"orderId\": \"1\",\r\n  \"customerName\": \"Carlos Armando Aguilar\",\r\n  \"cardNumber\": \"1234567890123454\",\r\n  \"cardHolderName\": \"Carlos Aguilar\",\r\n  \"expirationDate\": \"12/25\",\r\n  \"cvv\": 123,\r\n  \"billingAddress\": \"Tegucigalpa\",\r\n  \"email\": \"carlosaguilardiaz24@gmail.com\",\r\n  \"phoneNumber\": \"+50433494741\"\r\n  }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -73,7 +73,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cuscatlan/products/11",
+					"raw": "http://localhost:8080/cuscatlan/products/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -82,7 +82,7 @@
 					"path": [
 						"cuscatlan",
 						"products",
-						"11"
+						"10"
 					]
 				}
 			},
